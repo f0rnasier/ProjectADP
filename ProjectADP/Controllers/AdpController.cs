@@ -39,7 +39,7 @@ namespace ProjectADP.Controllers
                 // Call Post request with Calculation Result
                 await PostCalculationResult(adpModel);
 
-                return adpModel;
+                return StatusCode(StatusCodes.Status200OK, adpModel); ;
             }
             catch (Exception)
             {
@@ -60,7 +60,7 @@ namespace ProjectADP.Controllers
             {
                 Console.WriteLine($"We just send the result of " +
                            $"{adpmodel.Result} for the calculation");
-                return adpmodel;
+                return StatusCode(StatusCodes.Status200OK, adpmodel);
             }
             else 
             {
