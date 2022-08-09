@@ -44,7 +44,6 @@ namespace ProjectADP.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, 
                                   "Something Went Wrong with Your Request");
             }
-
         }
 
         [HttpPost("PostTaskAdp")]
@@ -52,12 +51,13 @@ namespace ProjectADP.Controllers
         {
             var erroMessage = new ErrorFactory();
             var HttpClient = _httpClientFactory.CreateClient();
+
             var postTask = await HttpClient.PostAsJsonAsync(AdpTaskConstants.AdpPostTask, adpmodel);
 
             if (postTask.IsSuccessStatusCode)
             {
-                Console.WriteLine($"We just send the result of " +
-                           $"{adpmodel.Result} for the calculation");
+                Console.WriteLine($"#### We just send the result of " +
+                           $"{adpmodel.Result} for the calculation ####");
                 
                 return StatusCode(StatusCodes.Status200OK, adpmodel);
             }
@@ -66,9 +66,6 @@ namespace ProjectADP.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError,
                        erroMessage.MessageError((int)postTask.StatusCode));   
             }
-
         }
     }
-
-   
 }
