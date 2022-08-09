@@ -3,8 +3,6 @@ using Newtonsoft.Json;
 using ProjectADP.Factory;
 using ProjectADP.Models;
 using ProjectADP.Utils;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace ProjectADP.Controllers
 { 
@@ -60,6 +58,7 @@ namespace ProjectADP.Controllers
             {
                 Console.WriteLine($"We just send the result of " +
                            $"{adpmodel.Result} for the calculation");
+                
                 return StatusCode(StatusCodes.Status200OK, adpmodel);
             }
             else 
