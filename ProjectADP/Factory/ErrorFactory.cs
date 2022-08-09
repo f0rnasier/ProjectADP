@@ -4,7 +4,7 @@
     {
         public string MessageError(int err)
         {
-            string ErrorMessage="";
+            string ErrorMessage;
             switch (err)
             {
                 case 400:
@@ -20,10 +20,6 @@
                     throw new ApplicationException("Not Handled Error!");
             }
             return ErrorMessage;
-            
         }
-
-    
-
     }
 }
