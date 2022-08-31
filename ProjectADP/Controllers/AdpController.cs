@@ -42,7 +42,7 @@ namespace ProjectADP.Controllers
             catch (Exception)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, 
-                                  "Something Went Wrong with Your Request");
+                                  "Something Wrong with Your Request");
             }
         }
 

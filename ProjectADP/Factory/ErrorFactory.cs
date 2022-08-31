@@ -8,7 +8,7 @@
             switch (err)
             {
                 case 400:
-                    ErrorMessage = "You send an Incorrect value in result; No ID specified; Value is invalid";
+                    ErrorMessage = "You send an Incorrect value in result; No ID; Value is invalid";
                     break;
                 case 404:
                     ErrorMessage = "The Value not found for specified ID";
